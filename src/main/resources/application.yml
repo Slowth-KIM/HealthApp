@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/HealthApp
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  output:
+    ansi:
+      enabled: always
+  jpa:
+    #  open-in-view: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        default_batch_fetch_size: 100
+        show_sql: true
+        format_sql: true
+  h2:
+    console:
+      enabled: true
+
+
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace
+

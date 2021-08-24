@@ -4,11 +4,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.validator.constraints.UniqueElements;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
@@ -21,12 +18,14 @@ public class Member {
     @NotEmpty
     @Column(unique = true)
     private String loginId; //로그인 시 ID
+
     @NotEmpty
     private String name;
     @NotEmpty
     private String password;
 
     @NotEmpty
+    @Enumerated(EnumType.STRING)
     private Gender gender;
 
     @Builder

@@ -6,6 +6,7 @@
 <br>
 
 ### 0. 사용한 스프링 설정
+
 -------
 
 - Spring web
@@ -13,12 +14,13 @@
 - lombok
 - vaildation
 - thymeleaf
-- MongoDB
+- H2 database
 
 <br>
 <br>
 
 ### 1. 기능 요구조건
+
 -------
 
  - 회원 기능
@@ -44,3 +46,11 @@
 
 <br>
 <br>
+
+
+### 2. ERD 설계
+
+
+----------
+
+![](https://lucid.app/publicSegments/view/f1e5aacc-7c36-4d8e-9507-5ced222ef1b5https://lucid.app/publicSegments/view/1e49cee4-34f2-42e5-8514-1eccc0262a57/image.jpeg)

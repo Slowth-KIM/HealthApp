@@ -4,11 +4,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.data.annotation.Id;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotEmpty;
 
+@Entity
 @Getter @Setter
 public class Member {
 
@@ -16,6 +19,7 @@ public class Member {
     private Long id;
 
     @NotEmpty
+    @Column(unique = true)
     private String loginId; //로그인 시 ID
     @NotEmpty
     private String name;

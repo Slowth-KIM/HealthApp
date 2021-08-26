@@ -48,9 +48,24 @@
 <br>
 
 
-### 2. ERD 설계
+### 2. 오류 및 해결  
 
 
 ----------
 
-![](https://lucid.app/publicSegments/view/f1e5aacc-7c36-4d8e-9507-5ced222ef1b5https://lucid.app/publicSegments/view/1e49cee4-34f2-42e5-8514-1eccc0262a57/image.jpeg)
+- @Builder 사용시 에러   
+  
+```
+  java: constructor Member in class springProject.HealthKakao.domain.member.Member cannot be applied to given types;
+  required: no arguments
+  found: java.lang.Long,java.lang.String,java.lang.String,java.lang.String,springProject.HealthKakao.domain.member.Gender
+  reason: actual and formal argument lists differ in length
+```
+
+<br>
+
+    - @AllArgsConstructor
+
+    일단, 의미 상 빌더 패턴을 생각해 보았을 때, 아무것도 없는 생성자는 필요가 없다.
+
+    빌더는 필드의 초기화 작업을 도와주는 역할이기 때문에.

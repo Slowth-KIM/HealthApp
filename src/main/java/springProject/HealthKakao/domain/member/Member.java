@@ -1,15 +1,15 @@
 package springProject.HealthKakao.domain.member;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Getter @Setter
+@Getter
+@Builder
+@AllArgsConstructor
 public class Member {
 
     @Id
@@ -24,16 +24,11 @@ public class Member {
     @NotEmpty
     private String password;
 
-    @NotEmpty
+    @NotNull(message = "성별을 입력해주세요")
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @Builder
-    public Member(Long id, @NotEmpty String loginId, @NotEmpty String name, @NotEmpty String password, @NotEmpty Gender gender) {
+    public void setId(Long id) {
         this.id = id;
-        this.loginId = loginId;
-        this.name = name;
-        this.password = password;
-        this.gender = gender;
     }
 }

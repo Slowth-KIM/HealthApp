@@ -1,21 +1,37 @@
 package springProject.HealthKakao.domain.member;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 
 @Slf4j
 @Repository
+@RequiredArgsConstructor
 public class MemberRepository {
 
-    private static Map<Long, Member> store = new HashMap<>();
-    private static long sequence = 0L;
+    @PersistenceContext
+    private final EntityManager em;
 
+    /**
+     * 동시성 문제가 고려되어 있지 않음, 실무에서는 ConcurrentHashMap, AtomicLong 사용 고려
+     */
+    private static ConcurrentHashMap<Long, Member> store = new ConcurrentHashMap<>();
+    private static AtomicLong sequence = new AtomicLong();
+
+
+    @Transactional
     public Member save(Member member){
-        member.setId(++sequence);
+        member.setId(sequence.incrementAndGet());
         log.info("save : member = {}", member);
         store.put(member.getId(), member);
+        em.persist(member);
         return  member;
     }
 

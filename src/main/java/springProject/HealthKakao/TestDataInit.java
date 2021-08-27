@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import springProject.HealthKakao.domain.item.Item;
 import springProject.HealthKakao.domain.item.ItemRepository;
+import springProject.HealthKakao.domain.member.Gender;
+import springProject.HealthKakao.domain.member.Member;
 import springProject.HealthKakao.domain.member.MemberRepository;
 
 import javax.annotation.PostConstruct;
@@ -24,15 +26,15 @@ public class TestDataInit {
         itemRepository.save(new Item("itemA", 10000, 10));
         itemRepository.save(new Item("itemB", 20000, 20));
 
-        /**
 
-        Member member = new Member();
-        member.setLoginId("test");
+        Member member = Member.builder()
+                .loginId("test")
+                .password("test!")
+                .name("테스터")
+                .gender(Gender.FEMALE)
+                .build();
 
-        member.setPassword("test!");
-        member.setName("테스터");
         memberRepository.save(member);
-         **/
     }
 
 

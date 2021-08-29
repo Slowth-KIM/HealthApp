@@ -4,7 +4,7 @@ package springProject.HealthKakao.domain.login;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import springProject.HealthKakao.domain.member.Member;
-import springProject.HealthKakao.domain.member.MemberRepository;
+import springProject.HealthKakao.repository.MemberRepository;
 
 @Service
 @RequiredArgsConstructor

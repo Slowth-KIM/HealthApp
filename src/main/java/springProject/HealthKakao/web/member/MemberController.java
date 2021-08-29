@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import springProject.HealthKakao.domain.member.Member;
-import springProject.HealthKakao.domain.member.MemberRepository;
+import springProject.HealthKakao.repository.MemberRepository;
 
 import javax.validation.Valid;
 

@@ -9,7 +9,7 @@
 
 <div class="container" style="max-width: 600px">
     <div class="py-5 text-center">
-        <h2>홈 화면</h2>
+        <h2>Health App 홈 화면</h2>
     </div>
 
     <h4 class="mb-3" th:text="|로그인: ${member.name}|">로그인 사용자 이름</h4>
@@ -19,10 +19,30 @@
     <div class="row">
         <div class="col">
             <button class="w-100 btn btn-secondary btn-lg" type="button"
-                    th:onclick="|location.href='@{/items}'|">
-                상품 관리
+                    th:onclick="|location.href='@{/pills}'|">
+                오늘 먹을 약
+           </button>
+        </div>
+
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg" type="button"
+                    th:onclick="|location.href='@{/weights}'|">
+                오늘의 몸무게
             </button>
         </div>
+
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg" type="button"
+                    th:onclick="|location.href='@{/bloodSugarLevels}'|">
+                오늘의 혈당
+            </button>
+        </div>
+
+    </div>
+
+    <hr class="my-4">
+
+    <div class="row">
         <div class="col">
             <form th:action="@{/logout}" method="post">
                 <button class="w-100 btn btn-dark btn-lg" onclick="location.href='items.html'" type="submit">
@@ -31,8 +51,6 @@
             </form>
         </div>
     </div>
-
-    <hr class="my-4">
 
 </div> <!-- /container -->
 

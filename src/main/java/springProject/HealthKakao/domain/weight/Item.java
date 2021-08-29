@@ -1,4 +1,4 @@
-package springProject.HealthKakao.domain.item;
+package springProject.HealthKakao.domain.weight;
 
 import lombok.Data;
 

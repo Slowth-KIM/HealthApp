@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import springProject.HealthKakao.domain.member.Member;
-import springProject.HealthKakao.domain.member.MemberRepository;
+import springProject.HealthKakao.repository.MemberRepository;
 
 @Service
 @Transactional(readOnly = true)

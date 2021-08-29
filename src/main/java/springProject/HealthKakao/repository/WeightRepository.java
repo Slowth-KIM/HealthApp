@@ -1,6 +1,7 @@
-package springProject.HealthKakao.domain.item;
+package springProject.HealthKakao.repository;
 
 import org.springframework.stereotype.Repository;
+import springProject.HealthKakao.domain.weight.Item;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class ItemRepository {
+public class WeightRepository {
 
     private static final Map<Long, Item> store = new HashMap<>(); //static
     private static long sequence = 0L; //static

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import springProject.HealthKakao.domain.member.Member;
-import springProject.HealthKakao.domain.member.MemberRepository;
+import springProject.HealthKakao.repository.MemberRepository;
 import springProject.HealthKakao.web.argumentResolver.Login;
 import springProject.HealthKakao.web.session.SessionManager;
 

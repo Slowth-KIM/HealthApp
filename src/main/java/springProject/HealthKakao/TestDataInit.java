@@ -2,11 +2,9 @@ package springProject.HealthKakao;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import springProject.HealthKakao.domain.item.Item;
-import springProject.HealthKakao.domain.item.ItemRepository;
-import springProject.HealthKakao.domain.member.Gender;
-import springProject.HealthKakao.domain.member.Member;
-import springProject.HealthKakao.domain.member.MemberRepository;
+import springProject.HealthKakao.domain.weight.Item;
+import springProject.HealthKakao.repository.WeightRepository;
+import springProject.HealthKakao.repository.MemberRepository;
 
 import javax.annotation.PostConstruct;
 
@@ -14,7 +12,7 @@ import javax.annotation.PostConstruct;
 @RequiredArgsConstructor
 public class TestDataInit {
 
-    private final ItemRepository itemRepository;
+    private final WeightRepository itemRepository;
     private final MemberRepository memberRepository;
 
 
@@ -27,6 +25,7 @@ public class TestDataInit {
         itemRepository.save(new Item("itemB", 20000, 20));
 
 
+        /**
         Member member = Member.builder()
                 .loginId("test")
                 .password("test!")
@@ -34,7 +33,7 @@ public class TestDataInit {
                 .gender(Gender.FEMALE)
                 .build();
 
-        memberRepository.save(member);
+        memberRepository.save(member);**/
     }
 
 

@@ -1,9 +1,10 @@
-package springProject.HealthKakao.domain.member;
+package springProject.HealthKakao.repository;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import springProject.HealthKakao.domain.member.Member;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,10 +29,12 @@ public class MemberRepository {
 
     @Transactional
     public Member save(Member member){
-        member.setId(sequence.incrementAndGet());
+        //member.setId(sequence.incrementAndGet());
         log.info("save : member = {}", member);
-        store.put(member.getId(), member);
+
+
         em.persist(member);
+        store.put(member.getId(), member);
         return  member;
     }
 
@@ -47,6 +50,7 @@ public class MemberRepository {
 //            }
 //        }
 //        return Optional.empty();
+
 
         return findAll().stream()
                 .filter(m -> m.getLoginId().equals(loginId))

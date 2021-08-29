@@ -10,8 +10,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import springProject.HealthKakao.domain.item.Item;
-import springProject.HealthKakao.domain.item.ItemRepository;
+import springProject.HealthKakao.domain.weight.Item;
+import springProject.HealthKakao.repository.WeightRepository;
 import springProject.HealthKakao.web.item.form.ItemSaveForm;
 import springProject.HealthKakao.web.item.form.ItemUpdateForm;
 
@@ -23,7 +23,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ItemController {
 
-    private final ItemRepository itemRepository;
+    private final WeightRepository itemRepository;
 
     @GetMapping
     public String items(Model model) {

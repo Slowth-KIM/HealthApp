@@ -19,7 +19,7 @@ import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping("/items")
+@RequestMapping("/pills")
 @RequiredArgsConstructor
 public class ItemController {
 
@@ -28,8 +28,8 @@ public class ItemController {
     @GetMapping
     public String items(Model model) {
         List<Item> items = itemRepository.findAll();
-        model.addAttribute("items", items);
-        return "items/items";
+        model.addAttribute("pills", items);
+        return "pills/pills";
     }
 
     @GetMapping("/{itemId}")

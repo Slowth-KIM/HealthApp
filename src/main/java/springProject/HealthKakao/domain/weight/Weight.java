@@ -21,10 +21,11 @@ public class Weight {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_login_id", referencedColumnName = "member_login_id")
     private Member member;
     /**
      * 외래키가 string으로 설정이 안 되는 바람에 일시적으로 멤버 테이블에 있는 PK를 몸무게 테이블의 FK로 지정
+     * referencedColumnName = 외래 키가 참조하는 대상 테이블의 컬럼명
      */
 
     private LocalDate recordedDate;

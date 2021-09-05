@@ -1,4 +1,4 @@
-package springProject.HealthKakao.web.item.form;
+package springProject.HealthKakao.web.pill.form;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Range;

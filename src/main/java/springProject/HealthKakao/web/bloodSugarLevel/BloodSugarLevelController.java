@@ -1,4 +1,4 @@
-package springProject.HealthKakao.web.item;
+package springProject.HealthKakao.web.bloodSugarLevel;
 
 
 
@@ -12,24 +12,24 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import springProject.HealthKakao.domain.weight.Item;
 import springProject.HealthKakao.repository.WeightRepository;
-import springProject.HealthKakao.web.item.form.ItemSaveForm;
-import springProject.HealthKakao.web.item.form.ItemUpdateForm;
+import springProject.HealthKakao.web.bloodSugarLevel.form.ItemSaveForm;
+import springProject.HealthKakao.web.bloodSugarLevel.form.ItemUpdateForm;
 
 import java.util.List;
 
 @Slf4j
 @Controller
-@RequestMapping("/pills")
+@RequestMapping("/bloodSugarLevels")
 @RequiredArgsConstructor
-public class ItemController {
+public class BloodSugarLevelController {
 
     private final WeightRepository itemRepository;
 
     @GetMapping
     public String items(Model model) {
         List<Item> items = itemRepository.findAll();
-        model.addAttribute("pills", items);
-        return "pills/pills";
+        model.addAttribute("bloodSugarLevels", items);
+        return "bloodSugarLevels/bloodSugarLevels";
     }
 
     @GetMapping("/{itemId}")

@@ -28,7 +28,7 @@ public class Pill {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_login_id", referencedColumnName = "member_login_id")
     private Member member;
 
     @NotNull(message = "약을 먹어야 할 시간을 선택해주세요")

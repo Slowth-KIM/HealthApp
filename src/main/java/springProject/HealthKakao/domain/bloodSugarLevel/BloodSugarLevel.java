@@ -21,7 +21,7 @@ public class BloodSugarLevel {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_login_id", referencedColumnName = "member_login_id")
     private Member member;
 
     private LocalDate recordedDate;

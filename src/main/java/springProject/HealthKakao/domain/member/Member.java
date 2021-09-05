@@ -36,6 +36,7 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
+    /**
     @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Weight> weights = new ArrayList<>();
@@ -47,6 +48,7 @@ public class Member {
     @JsonIgnore
     @OneToMany(mappedBy = "member")
     private List<Pill> pills = new ArrayList<>();
+    **/
 
     /**
     public void setId(Long id) {

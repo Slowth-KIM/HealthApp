@@ -1,16 +1,10 @@
 package springProject.HealthKakao.domain.member;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import springProject.HealthKakao.domain.bloodSugarLevel.BloodSugarLevel;
-import springProject.HealthKakao.domain.pill.Pill;
-import springProject.HealthKakao.domain.weight.Weight;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
